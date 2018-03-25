@@ -35,5 +35,6 @@ echo making menuconfig
 sleep 2
 sudo make menuconfig 
 wait
+echo building linux kernel
 sleep 2
 sudo fakeroot make-kpkg -j 5 --initrd --append-to-version=-custom kernel_image kernel_headers #-j
