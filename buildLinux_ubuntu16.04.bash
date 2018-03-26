@@ -12,7 +12,7 @@ wget https://cdn.kernel.org/pub/linux/kernel/v4.x/linux-4.15.7.tar.xz
 wait 
 echo unpacking archive
 sleep 1
-tar xf linux-4.15.7.tar.xz
+tar xvf linux-4.15.7.tar.xz
 sleep 2
 echo installing requirements
 sleep 4
@@ -35,5 +35,6 @@ echo making menuconfig
 sleep 2
 sudo make menuconfig 
 wait
+echo "building kernel"
 sleep 2
 sudo fakeroot make-kpkg -j 5 --initrd --append-to-version=-custom kernel_image kernel_headers #-j
